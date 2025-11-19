@@ -34,6 +34,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 - Images will responsively fit their containers; see `MenuItemCard.js` and usage for details.
 - If switching to external CDNs/images, update the menu JSON `image` field to use the absolute URL.
 
+---
+
+## Component Demo
+
+- To preview the new `FoodMenuList` sample UI component, visit [http://localhost:3000/demo-menu](http://localhost:3000/demo-menu) once the dev server is running.
+- The `/demo-menu` route is for demonstration only and can be used as a starting point for card-style menus.
+
 ## Accessibility & Responsiveness
 
 This app was carefully crafted to meet high accessibility standards and provide a fully responsive experience on mobile, tablet, and desktop devices.

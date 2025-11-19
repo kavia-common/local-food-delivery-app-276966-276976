@@ -7,6 +7,7 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ConfirmationPage from "./pages/ConfirmationPage";
 import "./App.css";
+import "./components/FoodMenuList.css";
 
 /**
  * PUBLIC_INTERFACE
@@ -81,6 +82,7 @@ function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/confirmation" element={<ConfirmationPage />} />
+          <Route path="/demo-menu" element={React.createElement(require("./pages/MenuDemoPage").default)} />
         </Routes>
       </main>
     </div>
