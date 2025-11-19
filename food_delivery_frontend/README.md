@@ -28,6 +28,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 - To customize restaurant/menu data, edit the JSON files under `/src/data/`.
 - Images referenced in demo data must reside under `/public/assets/`.
 - Example assets: `/public/assets/restaurant-oceanbistro.jpg` etc.
+- Menu item images are located in `/public/assets/` as compressed JPG/PNG placeholders (e.g., `/public/assets/bbq-chicken-sandwich.jpg`, `pizza.jpg`, `salad.jpg`, `sushi.jpg`, `dessert.jpg`).
+- All food/item photos are royalty-free/generated placeholders for demonstration only. Replace with your own images if needed.
+- Alt attributes on images use the item name for accessibility.
+- Images will responsively fit their containers; see `MenuItemCard.js` and usage for details.
+- If switching to external CDNs/images, update the menu JSON `image` field to use the absolute URL.
 
 ## Accessibility & Responsiveness
 
