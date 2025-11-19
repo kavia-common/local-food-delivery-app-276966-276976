@@ -21,6 +21,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 - Place order and view confirmation (orders are stored to local browser storage)
 - Responsive, accessible UI following Ocean Professional theme and color palette
 
+## Restaurant Images
+
+- The Browse Restaurants view displays a photo for each restaurant.
+- Ocean Bistro and Golden Grill use `/public/assets/restaurant-oceanbistro.jpg` and `/public/assets/restaurant-goldengrill.jpg`, respectively. Supply new images in this folder to customize.
+- If a restaurant image is missing or fails to load, a generic fallback (`/public/assets/sample-menu.png`) is shown.
+- All restaurant image references are set in `src/data/restaurants.json` (`image` field).
+- Images are loaded with accessible alt text, responsive styling, and `loading="lazy"`.
+- See `RestaurantCard.js` for implementation and fallback handling.
+
 ## Notes
 
 - All data is local, no backend or API calls.
