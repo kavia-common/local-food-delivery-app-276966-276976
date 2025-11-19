@@ -5,59 +5,78 @@ import React from "react";
  * Card for restaurant info; clickable, with alt text and basics.
  */
 function RestaurantCard({ restaurant, onSelect }) {
+  // Interactive semantic: use <article> with a <button> for accessible card
   return (
-    <div
+    <article
       className="restaurant-card"
-      tabIndex={0}
-      role="button"
-      aria-label={`View restaurant: ${restaurant.name}`}
-      onClick={() => onSelect(restaurant.id)}
-      onKeyDown={(e) => e.key === "Enter" && onSelect(restaurant.id)}
       style={{
         background: "#fff",
         boxShadow: "0 2px 6px rgba(0,0,0,0.06)",
         borderRadius: "12px",
         margin: "12px 0",
-        padding: 16,
-        cursor: "pointer",
         outline: "none",
       }}
+      aria-labelledby={`rest-title-${restaurant.id}`}
     >
-      <img
-        src={restaurant.image}
-        alt={`Photo of ${restaurant.name}`}
+      <button
+        type="button"
+        tabIndex={0}
+        aria-label={`View details about ${restaurant.name}`}
+        onClick={() => onSelect(restaurant.id)}
+        onKeyDown={e => e.key === "Enter" && onSelect(restaurant.id)}
         style={{
-          width: 88,
-          height: 88,
-          objectFit: "cover",
-          borderRadius: 8,
-          marginRight: 16,
-          float: "left",
+          display: "flex",
+          alignItems: "flex-start",
+          width: "100%",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: 0,
+          textAlign: "left",
+          minHeight: 110,
         }}
-      />
-      <div style={{ marginLeft: 104 }}>
-        <h3 style={{ margin: "0 0 4px", color: "#2563EB" }}>{restaurant.name}</h3>
-        <p style={{ margin: "0 0 8px" }}>{restaurant.description}</p>
-        <span
+      >
+        <img
+          src={restaurant.image}
+          alt={`Photo of ${restaurant.name}`}
           style={{
-            fontSize: 13,
-            background: "#F59E0B",
-            color: "#fff",
-            borderRadius: 4,
-            padding: "2px 8px",
+            width: 88,
+            height: 88,
+            objectFit: "cover",
+            borderRadius: 8,
+            marginRight: 16,
+            flexShrink: 0,
           }}
-        >
-          {restaurant.cuisine}
+        />
+        <span style={{ flex: 1, margin: 0, display: "block" }}>
+          <h3
+            id={`rest-title-${restaurant.id}`}
+            style={{ margin: "0 0 4px", color: "#2563EB" }}
+          >
+            {restaurant.name}
+          </h3>
+          <p style={{ margin: "0 0 8px" }}>{restaurant.description}</p>
+          <span
+            style={{
+              fontSize: 13,
+              background: "#F59E0B",
+              color: "#fff",
+              borderRadius: 4,
+              padding: "2px 8px",
+              marginRight: 7,
+            }}
+          >
+            {restaurant.cuisine}
+          </span>
+          <span style={{ fontSize: 13, color: "#111827", marginTop: 6, display: "inline-block" }}>
+            <span role="img" aria-label="Location">
+              📍
+            </span>{" "}
+            {restaurant.address} | {restaurant.hours}
+          </span>
         </span>
-        <div style={{ fontSize: 13, color: "#111827", marginTop: 6 }}>
-          <span role="img" aria-label="Location">
-            📍
-          </span>{" "}
-          {restaurant.address} | {restaurant.hours}
-        </div>
-      </div>
-      <div style={{ clear: "both" }} />
-    </div>
+      </button>
+    </article>
   );
 }
 

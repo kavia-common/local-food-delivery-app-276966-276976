@@ -29,10 +29,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 - Images referenced in demo data must reside under `/public/assets/`.
 - Example assets: `/public/assets/restaurant-oceanbistro.jpg` etc.
 
-## Accessibility & Theming
+## Accessibility & Responsiveness
 
-- Semantic HTML, ARIA labels, and keyboard navigation support.
-- Ocean Professional style: primary `#2563EB`, secondary/success `#F59E0B`, error `#EF4444`, background `#f9fafb`, surface `#ffffff`, text `#111827`.
+This app was carefully crafted to meet high accessibility standards and provide a fully responsive experience on mobile, tablet, and desktop devices.
+
+### Accessibility Features
+- **Landmarks & Navigation:** Semantic elements, ARIA roles, and skip-to-content link ensure smooth screen reader and keyboard navigation.
+- **Keyboard Support:** All controls, cards, and page actions are accessible via Tab/Shift+Tab, with visible focus outlines.
+- **Color Contrast:** Ocean Professional palette used with ensured AA-compliant color contrast, including in light and dark modes.
+- **ARIA & Labels:** Interactive elements have ARIA labels/roles for assistive technologies.
+- **Reduced Motion:** Honors users' system `prefers-reduced-motion` setting, disables non-essential transitions/animations if requested.
+- **Landmark Structure:** Header (banner+nav), main content (`role="main"`), and page sections are structured for accessibility.
+
+### Responsiveness
+- **Mobile First:** Responsive grid/layout adapts to phone, tablet, and desktop.
+- **Touch-Friendly:** Large button targets and flexible layout for all screen sizes.
+- **Adaptive Spacing:** Padding, margins, and card layouts scale with viewport.
+
+---
 
 ## Limitations
 
