@@ -50,6 +50,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it.
 - To preview the new `FoodMenuList` sample UI component, visit [http://localhost:3000/demo-menu](http://localhost:3000/demo-menu) once the dev server is running.
 - The `/demo-menu` route is for demonstration only and can be used as a starting point for card-style menus.
 
+- **Main Menu UI:** The FoodMenuList component is now used on each restaurant’s menu page for real menu ordering. The "Add" button is fully wired to the cart (see `/src/pages/RestaurantMenuPage.js` for the integration and data transformation).
+
 ## Accessibility & Responsiveness
 
 This app was carefully crafted to meet high accessibility standards and provide a fully responsive experience on mobile, tablet, and desktop devices.
