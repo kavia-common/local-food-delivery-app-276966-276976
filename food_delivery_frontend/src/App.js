@@ -1,47 +1,50 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
+import Header from "./components/Header";
+import RestaurantListPage from "./pages/RestaurantListPage";
+import RestaurantMenuPage from "./pages/RestaurantMenuPage";
+import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
+import "./App.css";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Root of the app, includes global theming, layout, and page routing
+ */
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Effect to apply theme to document element
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
+  // Reset to home on unknown routes
+  useEffect(() => {
+    if (
+      !["/", "/cart", "/checkout", "/confirmation"].some((r) =>
+        location.pathname.startsWith(r)
+      ) &&
+      !/^\/restaurant\/\w+/.test(location.pathname)
+    ) {
+      navigate("/");
+    }
+  }, [location, navigate]);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header theme={theme} setTheme={setTheme} />
+      <main className="main-content" aria-live="polite">
+        <Routes>
+          <Route path="/" element={<RestaurantListPage />} />
+          <Route path="/restaurant/:id" element={<RestaurantMenuPage />} />
+          <Route path="/cart" element={<CartPage />} />
+          <Route path="/checkout" element={<CheckoutPage />} />
+          <Route path="/confirmation" element={<ConfirmationPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }

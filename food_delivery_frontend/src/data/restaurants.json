@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Ocean Bistro",
+    "description": "Fresh seafood & coastal classics.",
+    "image": "/assets/restaurant-oceanbistro.jpg",
+    "address": "123 Seaside Lane",
+    "hours": "11am - 9pm",
+    "cuisine": "Seafood"
+  },
+  {
+    "id": "2",
+    "name": "Golden Grill",
+    "description": "Hearty grilled fare and vegetarian options.",
+    "image": "/assets/restaurant-goldengrill.jpg",
+    "address": "456 Market Ave",
+    "hours": "10am - 10pm",
+    "cuisine": "Grill"
+  }
+]

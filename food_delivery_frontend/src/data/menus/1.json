@@ -1,0 +1,16 @@
+[
+  {
+    "id": "m1",
+    "name": "Classic Fish & Chips",
+    "description": "Crispy battered fish served with golden fries.",
+    "price": 12.99,
+    "image": "/assets/fish-and-chips.jpg"
+  },
+  {
+    "id": "m2",
+    "name": "Seaside Shrimp Bowl",
+    "description": "Grilled shrimp, rice, and fresh veggies.",
+    "price": 13.5,
+    "image": "/assets/shrimp-bowl.jpg"
+  }
+]

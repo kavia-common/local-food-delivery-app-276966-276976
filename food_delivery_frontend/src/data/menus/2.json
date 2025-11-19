@@ -1,0 +1,16 @@
+[
+  {
+    "id": "g1",
+    "name": "BBQ Chicken Sandwich",
+    "description": "Grilled chicken, tangy BBQ, fresh roll.",
+    "price": 10.25,
+    "image": "/assets/bbq-chicken-sandwich.jpg"
+  },
+  {
+    "id": "g2",
+    "name": "Veggie Grill Platter",
+    "description": "Seasonal vegetables, grilled and served with hummus.",
+    "price": 9.99,
+    "image": "/assets/veggie-grill.jpg"
+  }
+]
